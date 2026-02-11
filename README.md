@@ -7,9 +7,8 @@ This project is a Java implementation of the classic Tetris game. It includes va
 - `src/main/java/mino` - Contains different mino (tetromino) types.
 
 ## How to Build
-You can build this project using Maven. Make sure you have [Maven](https://maven.apache.org/) installed.
+You can build this project using Maven.
+I personally run this using vs code.
 
 ## Running the Game
 After building, run the `main` class to start the game.
-
-Enjoy playing Tetris!
