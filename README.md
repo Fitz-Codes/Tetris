@@ -1,6 +1,6 @@
 # Tetris (Vanilla Java)
 
-A **classic Tetris clone built in plain Java** (no game engine). This project focuses on core fundamentals—game loop timing, keyboard input, collision detection, piece rotation, line clears, and scoring—implemented with a simple Java UI.
+A **classic Tetris clone built in plain Java** (no game engine). This project focuses on core fundamentals, game loop timing, keyboard input, collision detection, piece rotation, line clears, and scoring, implemented with a simple Java UI.
 
 ## Features
 
@@ -31,11 +31,6 @@ src/main/java/
 - Java (JDK) installed (Java 17+ recommended)
 - Maven installed (or use the Maven wrapper if you add one later)
 
-### Build
-
-```bash
-mvn clean package
-```
 
 ### Run
 
@@ -48,15 +43,6 @@ If you run it from an IDE:
 3. Locate the class containing `public static void main(String[] args)`
 4. Run it
 
-## Controls
-
-> Update these to match your key bindings.
-
-- **Left / Right:** Move piece
-- **Down:** Soft drop
-- **Up / X:** Rotate
-- **Space:** Hard drop
-- **P:** Pause (if implemented)
 
 ## How It Works (High Level)
 
@@ -73,6 +59,3 @@ If you’d like to improve this project:
 3. Commit your changes
 4. Open a pull request
 
-## License
-
-Add a license if you plan to share or reuse this code publicly (MIT is a common choice).
