@@ -1,14 +1,6 @@
 # Tetris (Vanilla Java)
 
-A **classic Tetris clone built in plain Java** (no game engine). This project focuses on core fundamentals, game loop timing, keyboard input, collision detection, piece rotation, line clears, and scoring, implemented with a simple Java UI.
-
-## Features
-
-- Classic Tetris gameplay (tetromino/mino pieces)
-- Keyboard controls (move, rotate, drop)
-- Collision + boundary checks
-- Line clearing
-- Basic scoring / progression (depending on your implementation)
+A **classic Tetris clone built in plain Java** (no game engine). This project focuses on core fundamentals, game loop timing, keyboard input, collision detection, piece rotation, line clears, and scoring, implemented with a simple Java UI. This was made for my comp sci class as my final project.
 
 ## Tech Stack
 
