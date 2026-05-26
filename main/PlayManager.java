@@ -47,6 +47,7 @@ public class PlayManager{
     private final Sound lineClearSound = new Sound();
     private final Sound BlockLandingSound = new Sound();
     private final Sound gameOverSound = new Sound();
+    private boolean landingSoundPlayedForCurrentMino;
 
 
 
@@ -55,8 +56,11 @@ public class PlayManager{
     int lines;
     int score;
     public PlayManager(){
+        staticBlocks.clear();
+        dropInterval = 40;
+
         //Main Play Area Frame
-        left_x = (GamePanel.WIDTH/2) - (WIDTH/2);
+        left_x = (GamePanel.PANEL_WIDTH / 2) - (WIDTH / 2);
         right_x = left_x + WIDTH;
         top_y = 50;
         bottom_y = top_y + HEIGHT;
@@ -92,6 +96,13 @@ public class PlayManager{
     }
     public void update(){
 
+        // Play landing sound on first floor contact so it feels immediate,
+        // while still keeping the lock delay before the piece becomes static.
+        if(currentMino.deactivating && !landingSoundPlayedForCurrentMino){
+            BlockLandingSound.play(4, false);
+            landingSoundPlayedForCurrentMino = true;
+        }
+
 
         //check if the current mino is active
         if(currentMino.active == false){
@@ -101,8 +112,10 @@ public class PlayManager{
             staticBlocks.add(currentMino.b[2]);
             staticBlocks.add(currentMino.b[3]);
 
-            //Play the landing effect
-            BlockLandingSound.play(4, false);
+            // If piece locked instantly (e.g., soft drop into floor), play once here.
+            if(!landingSoundPlayedForCurrentMino){
+                BlockLandingSound.play(4, false);
+            }
 
             // check if the game is over
             if(currentMino.b[0].x == MINO_START_X && currentMino.b[0].y == MINO_START_Y){
@@ -111,6 +124,7 @@ public class PlayManager{
                 gameOver = true;
                 GamePanel.music.stop();
                 gameOverSound.play(2, false);
+                
             }
             
 
@@ -120,6 +134,7 @@ public class PlayManager{
             //replace current mino with the next one
             currentMino = nextMino;
             currentMino.setXY(MINO_START_X, MINO_START_Y);
+            landingSoundPlayedForCurrentMino = false;
             nextMino = pickMino();
             nextMino.setXY(NEXTMINO_X, NEXTMINO_Y);
 
@@ -270,6 +285,6 @@ public class PlayManager{
          y = top_y + 320;
         g2.setColor(Color.blue);
         g2.setFont(new Font("Calibri", Font.ITALIC, 50));
-        g2.drawString("Tetris By Michael", x, y);
+        g2.drawString("CSA Tetris", x, y);
     }
 }

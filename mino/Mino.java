@@ -167,9 +167,8 @@ public class Mino
                 b[1].x -= Block.SIZE;
                 b[2].x -= Block.SIZE;
                 b[3].x -= Block.SIZE;
-            
-                KeyHandler.leftPressed = false;
             }
+            KeyHandler.leftPressed = false;
         }
         if(KeyHandler.rightPressed == true){
             if(rightCollision == false){
@@ -177,9 +176,8 @@ public class Mino
                 b[1].x += Block.SIZE;
                 b[2].x += Block.SIZE;
                 b[3].x += Block.SIZE;
-            
-                KeyHandler.rightPressed = false; 
             }
+            KeyHandler.rightPressed = false; 
         }
         //rotating the mino
         if(KeyHandler.upPressed == true){
